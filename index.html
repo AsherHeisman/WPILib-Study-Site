@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WPILib Command-Based Learning Lab</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Spectral:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="bg">
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+      <div class="orb orb-c"></div>
+      <div class="grain"></div>
+    </div>
+
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="hero-top">
+          <span class="eyebrow">WPILib Command-Based - Learn + Quiz</span>
+          <span class="pill" id="topicCount">12 Topics</span>
+        </div>
+        <h1>Command-Based Learning Lab</h1>
+        <p class="hero-copy">
+          Study the full command-based curriculum with bite-size lessons, flashcards, and quizzes that adapt as you move.
+          Content is based on the official WPILib documentation.
+        </p>
+        <div class="hero-actions">
+          <button class="btn primary" id="startStudy" type="button">Start Studying</button>
+          <button class="btn ghost" id="randomTopic" type="button">Surprise Me</button>
+        </div>
+        <div class="hero-stats" id="heroStats"></div>
+      </div>
+    </header>
+
+    <main class="app" id="app">
+      <aside class="sidebar">
+        <div class="search">
+          <input id="topicSearch" type="search" placeholder="Search topics">
+        </div>
+        <div class="topic-list" id="topicList"></div>
+      </aside>
+
+      <section class="content">
+        <div class="topic-header">
+          <div>
+            <h2 id="topicTitle">Select a topic</h2>
+            <p id="topicTagline" class="topic-tagline"></p>
+          </div>
+          <div class="topic-meta" id="topicMeta"></div>
+        </div>
+
+        <div class="panel-grid">
+          <section class="panel learn">
+            <div class="panel-head">
+              <h3>Learn</h3>
+              <span class="panel-kicker">Core concepts</span>
+            </div>
+            <p id="topicSummary" class="panel-summary"></p>
+            <div class="panel-columns">
+              <div>
+                <h4>Key Points</h4>
+                <ul id="topicKeyPoints" class="list"></ul>
+              </div>
+              <div>
+                <h4>Common Pitfalls</h4>
+                <ul id="topicPitfalls" class="list"></ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel flashcards">
+            <div class="panel-head">
+              <h3>Flashcards</h3>
+              <div class="card-controls">
+                <button class="chip" id="prevCard" type="button">Prev</button>
+                <button class="chip" id="flipCard" type="button">Flip</button>
+                <button class="chip" id="nextCard" type="button">Next</button>
+                <button class="chip" id="shuffleCards" type="button">Shuffle</button>
+              </div>
+            </div>
+            <div class="flashcard" id="flashcard">
+              <div class="flashcard-face flashcard-front" id="cardFront"></div>
+              <div class="flashcard-face flashcard-back" id="cardBack"></div>
+            </div>
+            <div class="card-progress" id="cardProgress"></div>
+          </section>
+
+          <section class="panel quiz">
+            <div class="panel-head">
+              <h3>Quiz</h3>
+              <div class="card-controls">
+                <button class="chip" id="newQuiz" type="button">New Quiz</button>
+                <button class="chip" id="checkQuiz" type="button">Check Answers</button>
+                <button class="chip" id="resetQuiz" type="button">Reset</button>
+              </div>
+            </div>
+            <div id="quizBody" class="quiz-body"></div>
+            <div id="quizResult" class="quiz-result"></div>
+          </section>
+
+          <section class="panel practice">
+            <div class="panel-head">
+              <h3>Practice</h3>
+              <span class="panel-kicker">Apply it</span>
+            </div>
+            <ul id="topicPractice" class="list"></ul>
+          </section>
+
+          <section class="panel sources">
+            <div class="panel-head">
+              <h3>Sources</h3>
+              <span class="panel-kicker">WPILib Docs</span>
+            </div>
+            <ul id="topicSources" class="source-list"></ul>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>Made for rapid learning: read, flip, quiz, repeat.</div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
